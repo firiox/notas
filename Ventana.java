@@ -1,15 +1,19 @@
-
-//package com.mycompany.notas;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.notas;
 
 /**
  *
- * @author favoxv
+ * @author he_fa
  */
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 //import java.awt.*;
 import java.awt.event.*;
 public class Ventana extends JFrame implements ActionListener {
@@ -18,6 +22,7 @@ public class Ventana extends JFrame implements ActionListener {
     JMenuItem guardar;
     JMenuItem abrir;
     JTextArea notasArea;
+    JScrollPane scrollP1;
     public void actionPerformed(ActionEvent e){
     }
     public Ventana(){
@@ -33,8 +38,9 @@ public class Ventana extends JFrame implements ActionListener {
         menu1.add(abrir);
         //Area
         notasArea = new JTextArea();
-        notasArea.setBounds(0,0,300,200);
-        add(notasArea);
+        scrollP1 = new JScrollPane(notasArea);
+        scrollP1.setBounds(0,0,300,200);
+        add(scrollP1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
